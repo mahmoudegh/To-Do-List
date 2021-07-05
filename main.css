@@ -1,12 +1,11 @@
-
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   font-family: Tahoma, Arial, sans-serif;
 }
 .todo-container {
-  width: 600px;
+  width: 80%;
   margin: 30px auto 0;
   background-color: #f6f6f6;
 }
@@ -19,7 +18,7 @@ body{
   display: inline-block;
   padding: 10px 15px;
   border: none;
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, 0.3);
   width: calc(100% - 17px);
   color: #fff;
   font-size: 20px;
@@ -39,7 +38,7 @@ body{
   color: #009688;
   cursor: pointer;
   font-size: 38px;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 .todo-container .add-task .plus:hover {
   transform: rotate(90deg);
@@ -75,7 +74,7 @@ body{
 .task-stats {
   display: flex;
   margin: 10px auto;
-  width: 600px;
+  width: 80%;
   font-size: 12px;
 }
 .task-stats .tasks-count {
@@ -105,7 +104,7 @@ body{
   cursor: pointer;
 }
 .task-stats .tasks-completed {
-  width:25%;
+  width: 25%;
   padding: 10px;
   text-align: right;
 }
@@ -123,12 +122,37 @@ body{
 .task-stats .tasks-completed span {
   background-color: #03a9f4;
 }
+@media (max-width: 500px) {
+  .task-stats {
+    flex-wrap: wrap;
+  }
+  .task-stats .tasks-count,
+  .task-stats .delete-all,
+  .task-stats .finish-all,
+  .task-stats .tasks-completed {
+    width: 50%;
+  }
+  .task-stats .tasks-count {
+    order: 1;
+  }
+  .task-stats .tasks-completed {
+    order: 2;
+  }
+  .task-stats .finish-all {
+    order: 3;
+    text-align: left;
+  }
+  .task-stats .delete-all {
+    order: 4;
+    text-align: right;
+  }
+}
 .swal-modal {
   background-color: #009688;
   border: 3px solid white;
 }
 .swal-button {
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .swal-button:not([disabled]):hover {
   background-color: #009688;
